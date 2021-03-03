@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, matchPath, useLocation, useHistory } from 'react-router-dom';
 import authAtom from "atoms/auth";
+import layoutAtom from "atoms/layout";
 import { useRecoilState } from "recoil";
 import api from "api";
 import routes from "./routes";
@@ -11,16 +12,17 @@ const App: React.FC = () => {
   const location = useLocation();
   const history = useHistory();
   const [authState, setAuthState] = useRecoilState(authAtom);
+  const [layoutState, setLayoutState] = useRecoilState(layoutAtom);
 
   React.useEffect(() => {
     if (!authState.init) {
       const checkToken = async () => {
 
         // url scope
-        let routeScope = '';
+        let routeMatched = null;
         for (let i = 0; i < routes.length; i++) {
           if (matchPath(location.pathname, routes[i])) {
-            routeScope = routes[i].scope;
+            routeMatched = routes[i];
             break;
           }
         }
@@ -37,7 +39,7 @@ const App: React.FC = () => {
           }
 
           // check url
-          if (routeScope !== userRole) {
+          if (!routeMatched || routeMatched.scope !== userRole) {
             if (userRole === 'admin') {
               history.push("/admin");
             } else {
@@ -60,7 +62,7 @@ const App: React.FC = () => {
           });
 
           // check url 
-          if (!routeScope) {
+          if (!routeMatched) {
             history.push("/login");
           }
         }
@@ -69,6 +71,20 @@ const App: React.FC = () => {
       checkToken();
     }
   }, [authState, setAuthState, history, location]);
+
+  React.useEffect(() => {
+    if (!layoutState.init) {
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+          setLayoutState({
+            ...layoutState,
+            init: true,
+            isMobile: false
+          });
+        }
+      });
+    }
+  }, [layoutState, setLayoutState]);
 
   return (
     <div>

@@ -9,3 +9,7 @@
 .btnPrimary {
   @apply py-3 px-4 text-sm text-center text-white rounded-lg cursor-pointer bg-primary opacity-90 hover:opacity-100 active:opacity-80 focus:outline-none
 }
+
+.btnOutline {
+  @apply py-3 px-4 text-sm text-center rounded-lg cursor-pointer focus:outline-none border border-grey4 hover:border-secondary active:bg-grey4
+}

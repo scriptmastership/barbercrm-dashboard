@@ -14,13 +14,12 @@ const NavLink: React.FC<Props> = ({ data }) => {
   });
 
   return (
-    <li className="relative cursor-pointer text-purple-300 hover:text-white" key={data.path}>
-      {match &&
-        <span className="absolute inset-y-0 left-0 w-1 bg-white rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
-      }
-      <Link className={clsx('px-6 py-3 inline-flex items-center w-full space-x-4', { 'text-white': match })} to={data.path}>
-        <data.Icon className="text-2xl" />
-        <span>{data.title}</span>
+    <li className={clsx('cursor-pointer bg-opacity-20 rounded-md group', match ? 'bg-secondary' : 'bg-transparent')} key={data.path}>
+      <Link className={clsx('px-6 py-4 inline-flex items-center w-full space-x-4')} to={data.path}>
+        <data.Icon className={clsx('text-2xl group-hover:text-primary', match ? 'text-primary' : 'text-grey2')} />
+        <span className={clsx('group-hover:text-primary', match ? 'text-primary' : 'text-grey1')}>
+          {data.title}
+        </span>
       </Link>
     </li>
   );

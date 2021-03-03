@@ -1,9 +1,10 @@
 import { FunctionComponent } from 'react';
 import Login from 'pages/auth/Login';
+import AdminHome from 'pages/admin/Home';
+import AdminServices from 'pages/admin/Services';
 
 interface Route {
   path: string;
-  title: string;
   scope: string;
   component: FunctionComponent
 }
@@ -11,10 +12,19 @@ interface Route {
 const routes: Route[] = [
   {
     path: '/login',
-    title: 'Login',
     scope: 'auth',
     component: Login,
-  }
+  },
+  {
+    path: '/admin',
+    scope: 'admin',
+    component: AdminHome,
+  },
+  {
+    path: '/admin/services',
+    scope: 'admin',
+    component: AdminServices,
+  },
 ];
 
 export default routes;

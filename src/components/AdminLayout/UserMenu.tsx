@@ -1,15 +1,19 @@
 import React from "react";
 import { ControlledMenu, MenuItem } from "@szhsin/react-menu";
 import api from "api";
+import authAtom from "atoms/auth";
+import { useRecoilValue } from "recoil";
+import { IoIosArrowDown } from 'react-icons/io';
 import "@szhsin/react-menu/dist/index.css";
 
 const UserMenu: React.FC = () => {
 
+  const authState = useRecoilValue(authAtom);
   const [isOpen, setOpen] = React.useState(false);
   const ref = React.useRef(null);
 
   const logout = async () => {
-    const response = await api.post('api/auth/logout');
+    const response = await api.post('auth/logout');
     if (response.status === 200) {
       window.location.href = '/login';
     } else {
@@ -21,13 +25,20 @@ const UserMenu: React.FC = () => {
   return (
     <React.Fragment>
       <button
-        className="px-4 h-10 rounded-md flex items-center justify-center focus:outline-none hover:bg-gray-100 active:bg-gray-200 cursor-pointer"
+        className="btnOutline flex items-center space-x-2"
         ref={ref}
         onClick={() => setOpen(true)}
       >
-        Admin
-    </button>
-      <ControlledMenu align="end" anchorRef={ref} isOpen={isOpen} onClose={() => setOpen(false)} >
+        <span>{authState.user?.name}</span>
+        <IoIosArrowDown />
+      </button>
+      <ControlledMenu
+        align="end"
+        offsetY={16}
+        anchorRef={ref}
+        isOpen={isOpen}
+        onClose={() => setOpen(false)}
+      >
         <MenuItem styles={{ padding: 0 }}>
           <div
             className="w-full"
