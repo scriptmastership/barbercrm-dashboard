@@ -39,7 +39,7 @@ const AdminServiceCategory: React.FC = () => {
   };
 
   return (
-    <AdminLayout title="New Category">
+    <AdminLayout title="New Service Category">
       <div className="max-w-xl mx-auto space-y-8">
         <form className="bg-white shadow p-8 space-y-4" onSubmit={handleSubmit(submit)}>
 

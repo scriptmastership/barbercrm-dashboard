@@ -1,12 +1,12 @@
 import { atom } from "recoil";
 
-enum ServiceTarget {
+export enum ServiceTarget {
   ALL = 'ALL',
   MEN = 'MEN',
   WOMEN = 'WOMEN'
 }
 
-enum ServiceType {
+export enum ServiceType {
   MIXED = 'MIXED',
   SINGLE = 'SINGLE'
 }

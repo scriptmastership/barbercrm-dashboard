@@ -16,8 +16,8 @@ const NavLink: React.FC<Props> = ({ data }) => {
   return (
     <li className={clsx('cursor-pointer bg-opacity-20 rounded-md group', match ? 'bg-secondary' : 'bg-transparent', !match && 'hover:bg-grey4')} key={data.path}>
       <Link className={clsx('px-6 py-4 inline-flex items-center w-full space-x-4')} to={data.path}>
-        <data.Icon className={clsx('text-2xl group-hover:text-primary', match ? 'text-primary' : 'text-grey2')} />
-        <span className={clsx('group-hover:text-primary', match ? 'text-primary' : 'text-grey1')}>
+        <data.Icon className={clsx('text-2xl', match ? 'text-primary' : 'text-grey2')} />
+        <span className={match ? 'text-primary' : 'text-grey1'}>
           {data.title}
         </span>
       </Link>
