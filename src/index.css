@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 .inputText {
-  @apply rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0;
+  @apply py-3 px-4 text-sm rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0;
 }
 
 .btnPrimary {
-  @apply py-3 px-4 text-sm text-center text-white rounded-lg cursor-pointer bg-primary opacity-90 hover:opacity-100 active:opacity-80 focus:outline-none
+  @apply h-12 px-4 text-sm flex items-center justify-center rounded-md cursor-pointer focus:outline-none space-x-2 bg-primary text-white opacity-90 hover:opacity-100 active:opacity-80
 }
 
-.btnOutline {
-  @apply py-3 px-4 text-sm text-center rounded-lg cursor-pointer focus:outline-none border border-grey4 hover:border-secondary active:bg-grey4
+.btnOutlineSecondary {
+  @apply h-12 px-4 text-sm flex items-center justify-center rounded-md cursor-pointer focus:outline-none space-x-2 border border-grey4 hover:border-secondary active:bg-grey4
+}
+
+.btnOutlinePrimary {
+  @apply h-12 px-4 text-sm flex items-center justify-center rounded-md cursor-pointer focus:outline-none space-x-2 border border-primary text-primary active:text-black
+}
+
+.btnOutlineCircle {
+  @apply h-12 w-12 flex items-center justify-center rounded-full cursor-pointer focus:outline-none border border-grey4 hover:border-secondary active:bg-grey4
 }

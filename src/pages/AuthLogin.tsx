@@ -42,9 +42,9 @@ const Login: React.FC = () => {
 
       // redirect
       if (user.role === 'admin') {
-        history.push("/admin");
+        history.push("/admin/home");
       } else {
-        history.push("/user");
+        history.push("/user/home");
       }
 
     } else {

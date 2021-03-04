@@ -10,13 +10,13 @@ interface Nav {
 
 const navList: Nav[] = [
   {
-    path: '/admin',
+    path: '/admin/home',
     title: 'Home',
     Icon: FaHome,
   },
   {
-    path: '/admin/services',
-    title: 'Services',
+    path: '/admin/service',
+    title: 'Service',
     Icon: FaClipboardList,
   },
 ];

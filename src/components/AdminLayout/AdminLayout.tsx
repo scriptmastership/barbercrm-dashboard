@@ -41,7 +41,7 @@ const AdminLayout: React.FC<any> = ({ children, title }) => {
             </div>
           </div>
 
-          <ul className="p-6">
+          <ul className="p-6 space-y-2">
             {navList.map(nav =>
               <NavLink key={nav.path} data={nav} />
             )}
@@ -52,7 +52,7 @@ const AdminLayout: React.FC<any> = ({ children, title }) => {
 
       <div className="flex flex-col flex-1 w-full">
 
-        <header className="z-10 h-16 bg-white shadow1">
+        <header className="z-10 h-16 bg-white shadow">
           <div className="flex items-center h-full p-8">
             <button className="btnOutline lg:hidden" onClick={toggleMobileMenu}>
               <AiOutlineMenu />

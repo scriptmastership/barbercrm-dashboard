@@ -5,7 +5,7 @@ import layoutAtom from "atoms/layout";
 import { useRecoilState } from "recoil";
 import api from "api";
 import routes from "./routes";
-import NoMatch from "pages/public/NoMatch";
+import NoMatch from "pages/NoMatch";
 
 const App: React.FC = () => {
 
@@ -41,9 +41,9 @@ const App: React.FC = () => {
           // check url
           if (!routeMatched || routeMatched.scope !== userRole) {
             if (userRole === 'admin') {
-              history.push("/admin");
+              history.push("/admin/home");
             } else {
-              history.push("/user");
+              history.push("/user/home");
             }
           }
 

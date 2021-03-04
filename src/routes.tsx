@@ -1,7 +1,11 @@
 import { FunctionComponent } from 'react';
-import Login from 'pages/auth/Login';
-import AdminHome from 'pages/admin/Home';
-import AdminServices from 'pages/admin/Services';
+import AuthLogin from 'pages/AuthLogin';
+import AdminHome from 'pages/AdminHome';
+import AdminService from 'pages/AdminService';
+import AdminServiceCategory from 'pages/AdminServiceCategory';
+import AdminServiceCategoryEdit from 'pages/AdminServiceCategoryEdit';
+import AdminServicePackage from 'pages/AdminServicePackage';
+import AdminServicePackageEdit from 'pages/AdminServicePackageEdit';
 
 interface Route {
   path: string;
@@ -13,17 +17,37 @@ const routes: Route[] = [
   {
     path: '/login',
     scope: 'auth',
-    component: Login,
+    component: AuthLogin,
   },
   {
-    path: '/admin',
+    path: '/admin/home',
     scope: 'admin',
     component: AdminHome,
   },
   {
-    path: '/admin/services',
+    path: '/admin/service',
     scope: 'admin',
-    component: AdminServices,
+    component: AdminService,
+  },
+  {
+    path: '/admin/service/category',
+    scope: 'admin',
+    component: AdminServiceCategory,
+  },
+  {
+    path: '/admin/service/category/:id',
+    scope: 'admin',
+    component: AdminServiceCategoryEdit,
+  },
+  {
+    path: '/admin/service/package',
+    scope: 'admin',
+    component: AdminServicePackage,
+  },
+  {
+    path: '/admin/service/package/:id',
+    scope: 'admin',
+    component: AdminServicePackageEdit,
   },
 ];
 

@@ -25,7 +25,7 @@ const UserMenu: React.FC = () => {
   return (
     <React.Fragment>
       <button
-        className="btnOutline flex items-center space-x-2"
+        className="btnOutlineSecondary flex items-center space-x-2"
         ref={ref}
         onClick={() => setOpen(true)}
       >
