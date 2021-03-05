@@ -26,6 +26,7 @@ export interface Package {
   type: ServiceType;
   time: number;
   price: number;
+  packages: string[];
 };
 
 interface ServeState {

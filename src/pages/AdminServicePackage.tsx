@@ -74,7 +74,7 @@ const AdminServicePackage: React.FC = () => {
 
   const submit = async (data: any) => {
 
-    // setStatus('submit');
+    setStatus('submit');
 
     const { name, description, categoryId, time, price, target, type, packages } = data;
     let request = {};
@@ -224,7 +224,7 @@ const AdminServicePackage: React.FC = () => {
                   </label>
 
                   <label className="block mt-4 text-sm space-y-2">
-                    <span className="text-gray-700 ">Price (unit: USD)</span>
+                    <span className="text-gray-700 ">Price (unit: RON)</span>
                     <input
                       type="number"
                       name="price"

@@ -57,7 +57,7 @@ const AdminServiceCategoryEdit: React.FC = () => {
   };
 
   return (
-    <AdminLayout title={category ? `Category - ${category.name}` : ''}>
+    <AdminLayout title={category ? `Service Category - ${category.name}` : ''}>
       {category ?
         <div className="max-w-xl mx-auto space-y-8">
           <form className="bg-white shadow p-8 space-y-4" onSubmit={handleSubmit(handleUpdate)}>
