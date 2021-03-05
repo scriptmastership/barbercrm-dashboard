@@ -139,7 +139,7 @@ const AdminServicePackage: React.FC = () => {
       {!serviceState.init ?
         <Loading />
         :
-        <div className="max-w-xl mx-auto space-y-8">
+        <div className="max-w-3xl mx-auto space-y-8">
           {categoryOptions.length === 0 ?
             <Link to="/admin/service/category" className="btnPrimary">
               Create Category

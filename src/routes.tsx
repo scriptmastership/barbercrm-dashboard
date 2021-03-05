@@ -4,6 +4,8 @@ import AdminHome from 'pages/AdminHome';
 import AdminCalendar from 'pages/AdminCalendar';
 import AdminProgram from 'pages/AdminProgram';
 import AdminTeam from 'pages/AdminTeam';
+import AdminTeamNew from 'pages/AdminTeamNew';
+import AdminTeamEdit from 'pages/AdminTeamEdit';
 import AdminService from 'pages/AdminService';
 import AdminServiceCategory from 'pages/AdminServiceCategory';
 import AdminServiceCategoryEdit from 'pages/AdminServiceCategoryEdit';
@@ -44,6 +46,16 @@ const routes: Route[] = [
     path: '/admin/team',
     scope: 'admin',
     component: AdminTeam,
+  },
+  {
+    path: '/admin/team/new',
+    scope: 'admin',
+    component: AdminTeamNew,
+  },
+  {
+    path: '/admin/team/:id',
+    scope: 'admin',
+    component: AdminTeamEdit,
   },
   {
     path: '/admin/service',

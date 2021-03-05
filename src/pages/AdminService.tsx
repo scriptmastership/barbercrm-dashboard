@@ -34,7 +34,7 @@ const AdminServices: React.FC = () => {
       {!serviceState.init ?
         <Loading />
         :
-        <div className="max-w-xl mx-auto space-y-8">
+        <div className="max-w-3xl mx-auto space-y-8">
           <AddMenu />
           {serviceState.categories.length > 0 ?
             <div className="bg-white rounded-md overflow-hidden shadow divide-y">
